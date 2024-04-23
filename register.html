@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hi.css">
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(90deg,beige,wheat);
+}
+
+.container{
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+.apply-box{
+    max-width: 600px;
+    padding: 20px;
+
+    margin: 0px auto;
+    margin-top: 50px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    border-radius: 40px;
+}
+.title-small{
+    font-size: 20px;
+}
+
+.form-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-controller{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+input,select,textarea{
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input:focus{
+    outline-color: royalblue;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button{
+    background-color: royalblue;
+    border: transparent solid 2px ;
+    color: white;
+    border-radius: 8px;
+}
+
+button:hover{
+    background-color: red;
+    border: 2px solid royalblue;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.textarea-control{
+    grid-column: 1/span 2;
+} 
+
+.textarea-control textarea{
+    width: 100%;
+}
+
+@media(max-width:460px){
+    .textarea-control {
+        grid-column: 1/ span 1;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="apply-box">
+            <h1> Job Application <span class="title">(Web)</span></h1>
+            <form action="job intro2.html">
+                <div class="form-container">
+                    <div class="form-controler">
+                        <label for="first name">First Name</label>
+                        <input type="text" id="first name" name="first-name" placeholder="Enter First Name">
+                    </div>
+                    <div class="form-controller">
+                        <label for="Last name">Last Name</label>
+                        <input type="text" id="first name" name="first-name" placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-controller">
+                        <label for="first name">Email</label>
+                        <input type="email" id="first name" name="first-name" placeholder="Email">
+                    </div>
+                    <div class="form-controller">
+                        <label for="jobe-role">Jobe-role</label>
+                        <select name="jobe-role" id="jobe-role">
+                            <option value="Frontend">---------</option>
+                            <option value="Frontend">Frontend Developer</option>
+                            <option value="Frontend">Backend Developer</option>
+                            <option value="Frontend">Fullstack Developer</option>
+                            <option value="Frontend">Flutter Developer</option>
+                            <option value="Frontend">Ui Designer</option>    
+                        </select>
+                    </div>
+                    <div class="textarea-controler">
+                        <label for="address">Address</label>
+                        <textarea name="address" id="" cols="30" rows="10">Enter Full Address</textarea>
+                    </div>
+                    <div class="form-controler">
+                        <label for="city">City</label>
+                        <input type="text" id="first name" name="first-name" placeholder="Enter City">
+                    </div>
+                    <div class="form-controler">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" id="first name" name="first-name" placeholder="Enter Pincode">
+                    </div>
+                    <div class="form-controler">
+                        <label for="date">Date</label>
+                        <input type="date" id="first name" name="first-name" value="2004-11-15">
+                    </div>
+                    <div class="form-controler">
+                        <label for="city">Upload ur CV</label>
+                        <input type="file" id="first name" name="first-name">
+                    </div>
+                        <div class="button-container">
+                            <button type="submit">Apply Now</button>
+                        </div>
+                </div>   
+            </form>
+    </div>  
+</body>
+</html>
