@@ -108,8 +108,11 @@ a {
 }
 
 .marq {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.941);
     height: 40px;
+
+/* 
+    changed height */
     padding-top: 10px;
     color: white;
 }
