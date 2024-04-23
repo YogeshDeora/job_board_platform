@@ -1,3 +1,4 @@
+/* font family changed */
 *{
     font-family: montserrat;
 }
@@ -12,7 +13,7 @@ nav{
 }
 
 .Logo{
-    color: white;
+    color: rgba(255, 255, 255, 0.858);
     font-size: 3rem;
     padding: 0 100px;
     font-weight: bold;
@@ -35,8 +36,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5fc;
 }
+
+
+
+
+/* background colour changed */
 
 
 
