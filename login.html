@@ -1,0 +1,131 @@
+<!-- Java script added by Yogesh -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(90deg, beige, wheat);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .outer-box {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .signup-body {
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+
+        .signup-body label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .signup-body input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-top: 4px;
+            box-sizing: border-box;
+        }
+
+        .signup-body input[type="submit"] {
+            background-color: #555;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-body input[type="submit"]:hover {
+            background-color: black;
+        }
+
+        .signup-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .signup-footer a {
+            color: #166599;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-footer a:hover {
+            color: #45a049;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('signup-form').addEventListener('submit', function (event) {
+                // Check password length
+                var passwordInput = document.getElementById('password');
+                if (passwordInput.value.length !== 8) {
+                    alert('Password must be 8 characters long.');
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="outer-box">
+        <h1>Log In</h1>
+        <form id="signup-form" action="job intro2.html" class="signup-body">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter Name" required>
+            
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="abc@gmail.com" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="At least 8 characters" required>
+            
+            <input type="submit" id="submit" value="Log In">
+        </form>
+        <footer class="signup-footer">
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </footer>
+    </div>
+</body>
+</html>

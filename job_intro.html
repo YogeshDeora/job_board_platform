@@ -1,112 +1,134 @@
+<!--A job board platform is an online marketplace where employers post job openings and job seekers search for employment opportunities  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<Meta http-equiv="X-UA-Compatiable" content="IE=Edge">
-    <meta name="viewpoint" content="widht=device-widht, intial-scale=1.0">
-<title>Job Platform</title>
-<style>
-    *{
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body{ 
-  background-color:beige ;
-  overflow: hidden;
-}
-
-.header {
-
-position: fixed;
-top: 0ch;
-left:0ic;
-width: 100%;
-padding: 20px 10%;
-background:transparent;
-display: flex;
-justify-content: space-between;
-align-items: center;
-z-index: 100;
-}
-.header-title{
- 
-  position:absolute;
-  top: 10rem;
-  left: 3rem;
-  letter-spacing: 3;
-  font-weight: bolder;
-  font-size: 52px;
-  color: var(--whiteColor);
-  text-shadow: 4px 2px 0px rgba(0,0,0,0.2);
-}
-.header-title > span{
-  color: blue;
-
-}
-.main{
-  min-height: 100vh;
-/*     changed the background image */
-  background: url('https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
-
-
-/*     background size corrected to cover */
-  background-size: cover;
-  background-position: center ;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Platform</title>
+    <style>
+        *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body{ 
+    background-color:beige ;
+    overflow: hidden;
+  }
+  
+  .header {
+  
+  position: fixed;
+  top: 0ch;
+  left:0ic;
+  width: 100%;
+  padding: 20px 10%;
+  background:transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  }
+  .header-title{
+   
+    position:absolute;
+    top: 10rem;
+    left: 3rem;
+    letter-spacing: 3;
+    font-weight: bolder;
+    font-size: 52px;
+    color: var(--whiteColor);
+    text-shadow: 4px 2px 0px rgba(0,0,0,0.2);
+  }
+  .header-title > span{
+    color: blue;
+  
+  }
+  .main{
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
+    background-size: cover;
+    background-position: center ;
+    
+    
+  }
   
   
-}
-
-
-.logo {
-  font-size: 40px;
-  color: #02353d;
-  text-decoration: none;
-  font-weight: 700;
-  filter: drop-shadow(0 0 5px);
-}
-.navbar a {
-  font-size: medium;
-  color: #040352;
-  text-decoration: none;
-  font-weight: 500;
-  margin: 30px;
-  transition: 0.3em;
-
-}
-.navbar a:hover,
-.navbar a.active {
-  color: #0aeffb;
-
-}
-
-</style>
-  </head>
+  .logo {
+    font-size: 40px;
+    color: #02353d;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px);
+  }
+  .navbar a {
+    font-size: medium;
+    color: #040352;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 30px;
+    transition: 0.3em;
+  
+  }
+  .navbar a:hover,
+  .navbar a.active {
+    color: #0aeffb;
+  
+  }
+    </style>
+</head>
 <body>
     <main class="main">
         <header class="header">
-          
-             <a href=# class="logo">JOB BOARD</a>
-             <nav class="navbar">
-                <a href="job intro2.html"> Home</a>
-                <a href="about.html"> About us</a>
-                <a href="trial.html"> job partners</a>
+            <a href="#" class="logo">JOB BOARD</a>
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="about.html">About us</a>
+                <a href="job_partners.html">Job partners</a>
                 <a href="register.html">Job Apply</a> 
-                <a href="contact 3.html">Contact Us</a>
-                <a href="login.html"> Sign in</a>
-             </nav>
-            
-            </div>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Sign in</a>
+            </nav>
             <h1 class="header-title">
                 FIND YOUR <br> <span>PERFECT JOB</span> <br> EASILY
-                
             </h1>
         </header>
-        </main>
-        <div class="search-wrapper">
-            
-        </div>
+    </main>
+    <div class="search-wrapper">
+        <?php
+            // Database connection
+            $servername = "localhost";
+            $username = "username";
+            $password = "password";
+            $dbname = "job_database";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // SQL query
+            $sql = "SELECT * FROM jobs";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "Job Title: " . $row["title"]. " - Company: " . $row["company"]. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+
+            $conn->close();
+        ?>
+    </div>
 </body>
 </html>
-<!-- aarav reviewed thw code -->
+
+
+
